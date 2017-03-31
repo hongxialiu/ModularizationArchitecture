@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    RouterResponse response = LocalRouter.getInstance(MaApplication.getMaApplication())
-                            .route(MainActivity.this, RouterRequest.obtain(MainActivity.this).provider("main")
-                                    .action("sync")
-                                    .data("1", "Hello")
-                                    .data("2", "World"));
-                    Toast.makeText(MainActivity.this, response.get(), Toast.LENGTH_SHORT).show();
+//                    RouterResponse response = LocalRouter.getInstance(MaApplication.getMaApplication())
+//                            .route(MainActivity.this, RouterRequest.obtain(MainActivity.this).provider("main")
+//                                    .action("sync")
+//                                    .data("1", "Hello")
+//                                    .data("2", "World"));
+//                    Toast.makeText(MainActivity.this, response.get(), Toast.LENGTH_SHORT).show();
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -201,13 +202,33 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final long startTime = System.currentTimeMillis();
                 try {
+//                    final RouterResponse response = LocalRouter.getInstance(MaApplication.getMaApplication())
+//                            .route(MainActivity.this, RouterRequest.obtain(MainActivity.this)
+//                                    .domain("com.spinytech.maindemo:pic")
+//                                    .provider("pic")
+//                                    .action("pic")
+//                                    .data("is_big", "0"));
+//                    response.isAsync();
+
                     final RouterResponse response = LocalRouter.getInstance(MaApplication.getMaApplication())
                             .route(MainActivity.this, RouterRequest.obtain(MainActivity.this)
-                                    .domain("com.spinytech.maindemo:pic")
-                                    .provider("pic")
-                                    .action("pic")
+                                    .domain("com.spinytech.dingpademo:dingpa")
+                                    .provider("dingpa")
+                                    .action("dingpa")
                                     .data("is_big", "0"));
                     response.isAsync();
+
+
+//                    RouterResponse response = LocalRouter.getInstance(MaApplication.getMaApplication())
+//                            .route(MainActivity.this, RouterRequest.obtain(MainActivity.this)
+//                                    .provider("dingpa")
+//                                    .domain("com.spinytech.dingpademo:dingpa")
+//                                    .action("godingpa")
+//                                    .data("1", "Hello")
+//                                    .data("2", "World"));
+//                    response.isAsync();
+
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {

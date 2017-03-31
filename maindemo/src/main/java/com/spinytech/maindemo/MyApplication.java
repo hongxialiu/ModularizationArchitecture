@@ -1,5 +1,7 @@
 package com.spinytech.maindemo;
 
+import com.spinytech.dingpademo.DingpaApplicationLogic;
+import com.spinytech.dingpademo.DingpaRouterConnectService;
 import com.spinytech.macore.MaApplication;
 import com.spinytech.macore.router.WideRouter;
 import com.spinytech.musicdemo.MusicApplicationLogic;
@@ -18,6 +20,7 @@ public class MyApplication extends MaApplication {
         WideRouter.registerLocalRouter("com.spinytech.maindemo",MainRouterConnectService.class);
         WideRouter.registerLocalRouter("com.spinytech.maindemo:music",MusicRouterConnectService.class);
         WideRouter.registerLocalRouter("com.spinytech.maindemo:pic",PicRouterConnectService.class);
+        WideRouter.registerLocalRouter("com.spinytech.dingpademo:dingpa",DingpaRouterConnectService.class);
     }
 
     @Override
@@ -26,6 +29,7 @@ public class MyApplication extends MaApplication {
         registerApplicationLogic("com.spinytech.maindemo",998, WebApplicationLogic.class);
         registerApplicationLogic("com.spinytech.maindemo:music",999, MusicApplicationLogic.class);
         registerApplicationLogic("com.spinytech.maindemo:pic",999, PicApplicationLogic.class);
+        registerApplicationLogic("com.spinytech.dingpademo:dingpa",999, DingpaApplicationLogic.class);
     }
 
     @Override
